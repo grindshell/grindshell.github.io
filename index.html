@@ -50,6 +50,15 @@
       glorpBox.style.alignItems = "start";
       glorpBox.style.justifyContent = "right";
       await new Promise(r => setTimeout(r, 50));
+
+      for(var i = 0; i < 100; i++) {
+        glorpBox.style.paddingRight = "15px";
+        await new Promise(r => setTimeout(r, 5));
+        glorpBox.style.paddingRight = "0px";
+        await new Promise(r => setTimeout(r, 5));
+      }
+
+      await new Promise(r => setTimeout(r, 50));
       glorpBox.style.justifyContent = "center";
       glorpBox.style.alignItems = "center";
 
