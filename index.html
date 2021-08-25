@@ -25,22 +25,28 @@
     #glorp {
       height: 100px;
       width: 100px;
-      background-color: yellow;
+      background-color: #ff33e7;
     }
   </style>
 
   <script>
+    var glorps = 0;
+
     function glorpulate() {
       var glorp = document.querySelector("#glorp");
       var r, g, b;
 
-      setInterval(function() {
-        r = Math.floor(Math.random()*255);
-        g = Math.floor(Math.random()*255);
-        b = Math.floor(Math.random()*255);
+      glorps += 1;
 
-        glorp.style.backgroundColor = "rgb("+r+","+g+","+b+")";
-      });
+      if(glorps == 2) {
+        setInterval(function() {
+          r = Math.floor(Math.random()*255);
+          g = Math.floor(Math.random()*255);
+          b = Math.floor(Math.random()*255);
+
+          glorp.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+        });
+      }
     }
 
     async function glorpover() {
@@ -51,11 +57,11 @@
       glorpBox.style.justifyContent = "right";
       await new Promise(r => setTimeout(r, 50));
 
-      for(var i = 0; i < 100; i++) {
-        glorpBox.style.paddingRight = "15px";
-        await new Promise(r => setTimeout(r, 5));
+      for(var i = 0; i < 5; i++) {
+        glorpBox.style.paddingRight = "200px";
+        await new Promise(r => setTimeout(r, 10));
         glorpBox.style.paddingRight = "0px";
-        await new Promise(r => setTimeout(r, 5));
+        await new Promise(r => setTimeout(r, 10));
       }
 
       await new Promise(r => setTimeout(r, 50));
@@ -64,16 +70,11 @@
 
       glorp.onmouseover = null;
     }
-
-    function glorpout() {
-      var glorp = document.querySelector("#glorp");
-      glorp.style.backgroundColor = "yellow";
-    }
   </script>
 </head>
 <body>
   <div id="glorp-box">
-    <div id="glorp" onmouseout="glorpout()" onmouseover="glorpover()" onclick="glorpulate()"></div>
+    <div id="glorp" onmouseover="glorpover()" onclick="glorpulate()"></div>
   </div>
 </body>
 </html>
