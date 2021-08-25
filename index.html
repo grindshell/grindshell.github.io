@@ -36,23 +36,17 @@
   </style>
 
   <script>
-    var glorps = 0;
-
     function glorpulate() {
       var glorp = document.querySelector("#glorp");
       var r, g, b;
 
-      glorps += 1;
+      setInterval(function() {
+        r = Math.floor(Math.random()*255);
+        g = Math.floor(Math.random()*255);
+        b = Math.floor(Math.random()*255);
 
-      if(glorps == 2) {
-        setInterval(function() {
-          r = Math.floor(Math.random()*255);
-          g = Math.floor(Math.random()*255);
-          b = Math.floor(Math.random()*255);
-
-          glorp.style.backgroundColor = "rgb("+r+","+g+","+b+")";
-        });
-      }
+        glorp.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+      });
     }
 
     async function glorpover() {
