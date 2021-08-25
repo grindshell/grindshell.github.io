@@ -1,1 +1,52 @@
-hello world
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>grindbox</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      background-color: black;
+    }
+
+    html, body, #glorp-box {
+      height: 100%;
+    }
+
+    #glorp-box {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    #glorp {
+      height: 100px;
+      width: 100px;
+      background-color: yellow;
+    }
+  </style>
+
+  <script>
+    function glorpulate() {
+      var glorp = document.querySelector("#glorp");
+      var r, g, b;
+
+      setInterval(function() {
+        r = Math.floor(Math.random()*255);
+        g = Math.floor(Math.random()*255);
+        b = Math.floor(Math.random()*255);
+
+        glorp.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+      });
+    }
+  </script>
+</head>
+<body>
+  <div id="glorp-box">
+    <div id="glorp" onclick="glorpulate()"></div>
+  </div>
+</body>
+</html>
