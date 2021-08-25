@@ -8,11 +8,17 @@
 
   <style>
     body {
+      color: #ff33e7;
+      font-size: 24px;
       background-color: black;
     }
 
     html, body, #glorp-box {
       height: 100%;
+    }
+
+    marquee {
+      color: yellow;
     }
 
     #glorp-box {
@@ -23,8 +29,8 @@
     }
 
     #glorp {
-      height: 100px;
-      width: 100px;
+      height: 5px;
+      width: 5px;
       background-color: #ff33e7;
     }
   </style>
@@ -73,6 +79,15 @@
   </script>
 </head>
 <body>
+  <h1>grindbox</h1>
+  <marquee direction="right" width="25%">under construction</marquee>
+  <div>
+    <ul>
+      <li>stream</li>
+      <li>projects</li>
+      <li>about</li>
+    </ul>
+  </div>
   <div id="glorp-box">
     <div id="glorp" onmouseover="glorpover()" onclick="glorpulate()"></div>
   </div>
