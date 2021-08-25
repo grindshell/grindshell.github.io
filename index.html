@@ -42,11 +42,29 @@
         glorp.style.backgroundColor = "rgb("+r+","+g+","+b+")";
       });
     }
+
+    async function glorpover() {
+      var glorpBox = document.querySelector("#glorp-box");
+      var glorp = document.querySelector("#glorp");
+
+      glorpBox.style.alignItems = "start";
+      glorpBox.style.justifyContent = "right";
+      await new Promise(r => setTimeout(r, 50));
+      glorpBox.style.justifyContent = "center";
+      glorpBox.style.alignItems = "center";
+
+      glorp.onmouseover = null;
+    }
+
+    function glorpout() {
+      var glorp = document.querySelector("#glorp");
+      glorp.style.backgroundColor = "yellow";
+    }
   </script>
 </head>
 <body>
   <div id="glorp-box">
-    <div id="glorp" onclick="glorpulate()"></div>
+    <div id="glorp" onmouseout="glorpout()" onmouseover="glorpover()" onclick="glorpulate()"></div>
   </div>
 </body>
 </html>
